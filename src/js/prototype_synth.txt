@@ -1,0 +1,45 @@
+var previousFrame = null;
+var output = null;
+var osc;
+var playing = false;
+var leapOptions = {enableGestures: false};
+var frequency = 270;
+
+osc = new p5.Oscillator();
+osc.setType('sine');
+osc.freq(frequency);
+osc.amp(0);
+osc.start();
+
+Leap.loop(leapOptions, function(frame) {
+
+    // Display Frame object data
+    var frameOutput = document.getElementById("frameData");
+
+    var output = "Frame ID: " + frame.id  + "<br />"
+                    + "Timestamp: " + frame.timestamp + " &micro;s<br />"
+
+    if (frame.hands.length > 0) {
+        output += "Hand detected, play sound!" + "<br />"
+            + "Freq: " + frequency + "<br />"
+            + "Palm position X: " + (frame.hands[0].palmPosition[0]) + "<br />"
+            + "Palm position Y: " + (frame.hands[0].palmPosition[1]) + "<br />"
+            + "Palm position Z: " + (frame.hands[0].palmPosition[2]) + "<br />";
+
+        if (!playing) {
+            osc.amp(0.5);
+            playing = true;
+        }
+
+    }
+    else {
+        osc.amp(0);
+        playing = false;
+    }
+
+    frameOutput.innerHTML = "<div>" + output + "</div>";
+
+    // Store frame for motion functions
+    previousFrame = frame;
+
+})

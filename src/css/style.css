@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(255, 171, 150);
+    color: rgb(0, 0, 0);
+    font-family: arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+div#main {
+    text-align: center;
+}
