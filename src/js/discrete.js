@@ -96,7 +96,4 @@ Leap.loop(leapOptions, function(frame) {
 
     frameOutput.innerHTML = "<div>" + output + "</div>";
 
-    // Store frame for motion functions
-    previousFrame = frame;
-
 })
