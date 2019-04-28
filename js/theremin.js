@@ -53,10 +53,10 @@ Leap.loop(leapOptions, function (frame) {
         handPosition = hand.palmPosition;
         
         osc.amp(primary_vol);
-        f_osc.amp(harmonics_vol)/0.33;
-        f_osc2.amp(harmonics_vol)/0.20;
-        f_osc3.amp(harmonics_vol)/0.14;
-        f_osc4.amp(harmonics_vol)/0.11;
+        f_osc.amp(harmonics_vol)/0.33; // third harmonic
+        f_osc2.amp(harmonics_vol)/0.20; // fifth harmonic
+        f_osc3.amp(harmonics_vol)/0.14; // seventh harmonic
+        f_osc4.amp(harmonics_vol)/0.11; // ninth harmonic
 
         if (handPosition[1] > 350) {
             primary_vol = 0.0;    
