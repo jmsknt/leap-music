@@ -29,6 +29,12 @@ f_osc4.setType('sine');
 f_osc4.amp(primary_vol);
 
 
+osc.start();
+f_osc.start();
+f_osc2.start();
+f_osc3.start();
+f_osc4.start();
+
 // main loop
 Leap.loop(leapOptions, function (frame) {
 
@@ -40,11 +46,7 @@ Leap.loop(leapOptions, function (frame) {
     
 
     if (frame.hands.length > 0) {
-        osc.start();
-        f_osc.start();
-        f_osc2.start();
-        f_osc3.start();
-        f_osc4.start();
+
 
         hand = frame.hands[0];
         handPosition = hand.palmPosition;
