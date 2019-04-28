@@ -36,7 +36,7 @@ f_osc3.start();
 f_osc4.start();
 
 // main loop
-Leap.loop(leapOptions, function (frame,) {
+Leap.loop(leapOptions, function (frame) {
 
     // Display Frame object data
     frameOutput = document.getElementById("frameData");
