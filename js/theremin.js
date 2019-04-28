@@ -1,6 +1,3 @@
-// window.AudioContext = window.AudioContext || window.webkitAudioContext;
-// let context = new AudioContext();
-
 var output = null;
 var leapOptions = { enableGestures: false };
 var frequency = 0;
@@ -13,28 +10,23 @@ var output;
 var osc = new p5.Oscillator();
 osc.setType('sine');
 osc.amp(primary_vol)
-osc.start();
 
 // set of oscillators to perform fourier transform 
 var f_osc = new p5.Oscillator();
 f_osc.setType('sine');
 f_osc.amp(primary_vol);
-f_osc.start();
 
 var f_osc2 = new p5.Oscillator();
 f_osc2.setType('sine');
 f_osc2.amp(primary_vol);
-f_osc2.start();
 
 var f_osc3 = new p5.Oscillator();
 f_osc3.setType('sine');
 f_osc3.amp(primary_vol);
-f_osc3.start();
 
 var f_osc4 = new p5.Oscillator();
-f_osc3.setType('sine');
-f_osc3.amp(primary_vol);
-f_osc3.start();
+f_osc4.setType('sine');
+f_osc4.amp(primary_vol);
 
 
 // main loop
@@ -48,6 +40,11 @@ Leap.loop(leapOptions, function (frame) {
     
 
     if (frame.hands.length > 0) {
+        osc.start();
+        f_osc.start();
+        f_osc2.start();
+        f_osc3.start();
+        f_osc4.start();
 
         hand = frame.hands[0];
         handPosition = hand.palmPosition;

@@ -1,10 +1,14 @@
 body {
-    background-color: rgb(255, 171, 150);
+    background-color: rgb(255, 236, 232);
     color: rgb(0, 0, 0);
     font-family: arial;
 }
 
 h1 {
+    text-align: center;
+}
+
+h2 {
     text-align: center;
 }
 
